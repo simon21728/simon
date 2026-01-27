@@ -1,5 +1,5 @@
 export const homeData = {
-  title: "My Company",
+  title: "Company introduction",
   description: " ",
   image: "/images/home.jpg",
 };
