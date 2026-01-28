@@ -13,7 +13,7 @@ export default function Navbar() {
           <img
             src="/images/logo.png" // ✔ use public folder path
             alt="Company Logo"
-            className="h-16 w-auto object-contain"
+            className="h-24 w-24 object-contain"
           />
         </Link>
 
