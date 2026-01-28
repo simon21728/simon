@@ -4,9 +4,7 @@ function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("");
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,66 +31,30 @@ function Contact() {
     }
   };
 
-  // Your coordinates (from IP: 162.120.188.235)
   const latitude = 9.03;
   const longitude = 38.74;
 
   return (
-    <div
-      style={{
-        padding: "40px",
-        background: "linear-gradient(to bottom, #f9f9f9, #e0f7fa)",
-        minHeight: "100vh",
-        fontFamily: "Arial, sans-serif",
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
-      <div
-        style={{
-          width: "100%",
-          maxWidth: "900px",
-          display: "flex",
-          flexDirection: "column",
-          gap: "30px",
-        }}
-      >
-        {/* Map with Marker */}
-        <div
-          style={{
-            width: "100%",
-            height: "300px",
-            borderRadius: "15px",
-            overflow: "hidden",
-            boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-          }}
-        >
+    <section className="w-full min-h-screen bg-gradient-to-b from-gray-50 to-cyan-50 flex justify-center items-start py-12 px-4 sm:px-6 lg:px-16">
+      <div className="w-full max-w-5xl flex flex-col gap-12">
+
+        {/* Map */}
+        <div className="w-full h-72 sm:h-96 md:h-[500px] rounded-xl overflow-hidden shadow-lg">
           <iframe
             title="Company Location"
             src={`https://maps.google.com/maps?q=${latitude},${longitude}&hl=en&z=15&output=embed`}
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen=""
+            className="w-full h-full border-0"
+            allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+          />
         </div>
 
         {/* Contact Form */}
-        <div
-          style={{
-            backgroundColor: "white",
-            padding: "30px",
-            borderRadius: "15px",
-            boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-          }}
-        >
-          <h1 style={{ color: "#0D6EFD", marginBottom: "25px", textAlign: "center" }}>
-            Contact Us
-          </h1>
+        <div className="bg-white p-6 sm:p-10 rounded-2xl shadow-lg flex flex-col gap-6">
+          <h1 className="text-2xl sm:text-3xl font-bold text-blue-600 text-center">Contact Us</h1>
 
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <input
               type="text"
               name="name"
@@ -100,16 +62,8 @@ function Contact() {
               value={formData.name}
               onChange={handleChange}
               required
-              style={{
-                width: "100%",
-                margin: "10px 0",
-                padding: "12px",
-                borderRadius: "8px",
-                border: "1px solid #ccc",
-                fontSize: "16px",
-              }}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
-
             <input
               type="email"
               name="email"
@@ -117,99 +71,60 @@ function Contact() {
               value={formData.email}
               onChange={handleChange}
               required
-              style={{
-                width: "100%",
-                margin: "10px 0",
-                padding: "12px",
-                borderRadius: "8px",
-                border: "1px solid #ccc",
-                fontSize: "16px",
-              }}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
-
             <textarea
               name="message"
               placeholder="Your Message"
               value={formData.message}
               onChange={handleChange}
               required
-              style={{
-                width: "100%",
-                margin: "10px 0",
-                padding: "12px",
-                borderRadius: "8px",
-                border: "1px solid #ccc",
-                fontSize: "16px",
-                minHeight: "120px",
-                resize: "vertical",
-              }}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 min-h-[120px] resize-y focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
-
             <button
               type="submit"
-              style={{
-                padding: "12px 25px",
-                marginTop: "15px",
-                backgroundColor: "#0D6EFD",
-                color: "white",
-                border: "none",
-                borderRadius: "8px",
-                fontSize: "16px",
-                fontWeight: "bold",
-                cursor: "pointer",
-                boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
-              }}
+              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition-transform transform hover:scale-105 shadow-md"
             >
               Send Message
             </button>
           </form>
 
           {status && (
-            <p
-              style={{
-                marginTop: "15px",
-                textAlign: "center",
-                color: status.includes("successfully") ? "green" : "red",
-                fontWeight: "bold",
-              }}
-            >
+            <p className={`text-center font-semibold ${status.includes("successfully") ? "text-green-600" : "text-red-600"}`}>
               {status}
             </p>
           )}
         </div>
-        <div className="moreinfo-item">
-          <strong>Email:</strong>{" "}
-          <a
-            href="mailto:bayusewmehon@gmail.com"
-            className="hover:underline"
-          >
-            bayusewmehon@gmail.com
-          </a>
+
+        {/* Contact Info */}
+        <div className="flex flex-col sm:flex-row justify-between items-center bg-white p-6 rounded-2xl shadow-lg gap-6 text-center sm:text-left">
+          <div>
+            <strong>Email:</strong>{" "}
+            <a href="mailto:bayusewmehon@gmail.com" className="text-blue-600 hover:underline">
+              bayusewmehon@gmail.com
+            </a>
+          </div>
+          <div>
+            <strong>Phone:</strong>{" "}
+            <a href="tel:0920763944" className="text-blue-600 hover:underline">
+              0920763944
+            </a>
+          </div>
+          <div>
+            <strong>LinkedIn:</strong>{" "}
+            <a
+              href="https://www.linkedin.com/in/sewmehon-bayu-96131b162/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:underline"
+            >
+              View Profile
+            </a>
+          </div>
         </div>
 
-        <div className="moreinfo-item">
-          <strong>Phone:</strong>{" "}
-          <a
-            href="tel:0920763944"
-            className="hover:underline"
-          >
-            0920763944
-          </a>
-        </div>
-
-        <div className="moreinfo-item">
-          <strong>LinkedIn:</strong>{" "}
-          <a
-            href="https://www.linkedin.com/in/sewmehon-bayu-96131b162/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline"
-          >
-            View Profile
-          </a>
-        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
