@@ -177,6 +177,37 @@ function Contact() {
             </p>
           )}
         </div>
+        <div className="moreinfo-item">
+          <strong>Email:</strong>{" "}
+          <a
+            href="mailto:bayusewmehon@gmail.com"
+            className="hover:underline"
+          >
+            bayusewmehon@gmail.com
+          </a>
+        </div>
+
+        <div className="moreinfo-item">
+          <strong>Phone:</strong>{" "}
+          <a
+            href="tel:0920763944"
+            className="hover:underline"
+          >
+            0920763944
+          </a>
+        </div>
+
+        <div className="moreinfo-item">
+          <strong>LinkedIn:</strong>{" "}
+          <a
+            href="https://www.linkedin.com/in/sewmehon-bayu-96131b162/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline"
+          >
+            View Profile
+          </a>
+        </div>
       </div>
     </div>
   );
