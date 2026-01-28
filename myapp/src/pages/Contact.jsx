@@ -35,7 +35,7 @@ function Contact() {
   const longitude = 38.74;
 
   return (
-    <section className="w-full min-h-screen bg-gradient-to-b from-gray-50 to-cyan-50 flex justify-center items-start py-12 px-4 sm:px-6 lg:px-16">
+    <section className="w-screen min-h-screen flex flex-col justify-start lg:justify-center bg-gradient-to-br from-gray-50 to-gray-100 px-4 sm:px-6 lg:px-16 py-16">
       <div className="w-full max-w-5xl flex flex-col gap-12">
 
         {/* Map */}
