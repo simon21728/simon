@@ -2,11 +2,11 @@ import { aboutData } from "../data/data";
 
 export default function About() {
   return (
-    <section className="w-full min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 px-4 sm:px-6 lg:px-16 py-16">
-      
+    <section className="w-screen min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 px-4 sm:px-6 lg:px-16 py-16 flex flex-col justify-start lg:justify-center">
+
       {/* MAIN CONTAINER */}
       <div className="max-w-7xl mx-auto">
-        
+
         {/* HEADER */}
         <div className="text-center mb-16">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-800 mb-6">
@@ -24,7 +24,7 @@ export default function About() {
           <div className="space-y-10">
 
             {/* ABOUT */}
-            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition">
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.03] transition-all duration-500">
               <h2 className="text-2xl font-semibold mb-4 text-blue-600">
                 Electrical & Computer Engineering Contractor
               </h2>
@@ -38,7 +38,7 @@ export default function About() {
             </div>
 
             {/* WHY CHOOSE US */}
-            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition">
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.03] transition-all duration-500">
               <h2 className="text-2xl font-semibold mb-4 text-blue-600">
                 Why Choose Us?
               </h2>
@@ -55,7 +55,7 @@ export default function About() {
           <div className="space-y-10">
 
             {/* MISSION */}
-            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition">
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.03] transition-all duration-500">
               <h2 className="text-2xl font-semibold mb-4 text-blue-600">
                 Our Mission
               </h2>
@@ -66,7 +66,7 @@ export default function About() {
             </div>
 
             {/* VISION */}
-            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition">
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.03] transition-all duration-500">
               <h2 className="text-2xl font-semibold mb-4 text-blue-600">
                 Our Vision
               </h2>
@@ -76,8 +76,8 @@ export default function About() {
               </p>
             </div>
 
-            {/* CTA */}
-            <div className="text-center lg:text-left">
+            {/* OPTIONAL CTA BUTTON */}
+            {/* <div className="text-center lg:text-left">
               <a
                 href={aboutData.pdf}
                 target="_blank"
@@ -88,9 +88,9 @@ export default function About() {
               >
                 View Company Profile
               </a>
-            </div>
-          </div>
+            </div> */}
 
+          </div>
         </div>
       </div>
     </section>
